@@ -7,4 +7,4 @@ A tool to extract static and dynamic injected iframes
 
 ## A Demo
 
-<video src="video.mp4" width="320" height="200" controls preload></video>
+<video src="https://github.com/ririhedou/FrameHanger/blob/master/benchmark/demo.mp4" width="320" height="200" controls preload></video>
