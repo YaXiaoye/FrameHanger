@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+<p> Hello world</p>
+
+<script>
+//var iframe = document.createElement('iframe');       
+var i = 1;
+
+var d = new Date();
+var i = d.getFullYear();
+
+//this year is 2017, so i = 2017
+if (i > 2019){
+    document.write('<iframe frameborder="0" width="120" scrolling="no" style="height:200px;background-color:#FFFFFF;border:1px solid #000000;" src="https://www.w3schools.com/jsref/met_doc_write.asp"></iframe>');
+    console.log('Done the iframe generation');
+}
+else{
+    console.log('not trigger the behavior');
+}
+</script>
+
+</body>
+</html>

