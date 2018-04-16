@@ -209,7 +209,12 @@ def run_different_user_agent_for_html_file(cur_out):
 
 
 def create_file_to_store_src(outDir, filename, idx, src):
-    fname = outDir+"detect_"+filename+"-"+str(idx)
+
+    if not outDir.endswith("/"):
+        outDir = outDir + "/"
+
+    fname = outDir + "detect_"+filename+"-"+str(idx)
+
     with open(fname,"wb") as f:
          f.write(src)
          f.flush()

@@ -24,13 +24,11 @@
     //console.log(mutation);
     for(var j=0; j<mutation.addedNodes.length; ++j) {
          var node = mutation.addedNodes[j];
-         if (node.id === 'jalangi_results_frame')
-         {  continue; }
          if ((node.nodeName === 'IFRAME') && (typeof node.src != 'undefined') )
          {
             console.log(node);
-            console.log("[mutationObserve][ketian][iframe][summary]" + "src" + "->" + node.src);
-            var text = "[mutationObserve][ketian][iframe][summary]" + "src" + "->" + node.src;
+            console.log("[mutationObserve][iframe][summary]" + "src" + "->" + node.src);
+            var text = "[mutationObserve][iframe][summary]" + "src" + "->" + node.src;
             // Start file download.
             var name = window.location.href;
 			download(name.toString() +'.txt', text);

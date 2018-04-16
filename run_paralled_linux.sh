@@ -54,9 +54,9 @@ else echo "${PASSED} is not valid";
      exit 1
 fi
 
-#cleanTempChromeDriver
+cleanTempChromeDriver
 
-echo "Finish ALL Clean and Exit"
+echo "Finish ALL, Clean and Exit"
 
 
 #An example on for the html files in a folder
