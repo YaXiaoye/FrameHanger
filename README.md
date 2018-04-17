@@ -14,9 +14,9 @@ FrameHanger is a tool to extract statically and dynamically injected iframes fro
 
 It is able to
 
-- [x] Extract statically injected Iframe
-- [x] Gather information on the Iframe and its host HTML content
-- [x] Selectively and Dynamically executing JavasScript to detect dynamic Iframe injection
+- [x] Extract statically injected iframe
+- [x] Gather information on the iframe and its host HTML content
+- [x] Selectively and Dynamically executing JavasScript to detect dynamic iframe injection
 - [x] Detect iframe destinations within JavaScript
 
 
@@ -63,7 +63,7 @@ python main.py -f benchmark/static_iframe.html --static
 
 We also provide scripts to enable running the scripts with xvfb on a server with multiple processes.
 
-Please check xvfb-run-safe.sh and run_paralled_linux.sh
+Please check xvfb-run-safe.sh and run_paralled_linux.sh.
 
 ## FAQ
 
@@ -72,7 +72,7 @@ Please check xvfb-run-safe.sh and run_paralled_linux.sh
 
 ## Disclaimer
 
-A research prototype, use at your own risk under the License. Thanks
+A research prototype, use at your own risk. Thanks
 
 If you feel this tool is helpful, citing the paper is highly encouraged.
 
@@ -85,6 +85,8 @@ If you feel this tool is helpful, citing the paper is highly encouraged.
 ```
 
 ## Acknowledgement
+
+Core contributor: ketian @ririhedou
 
 Thanks @Tigerly and @xiaodong-yu for reproduction testing.
 
