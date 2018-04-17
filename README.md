@@ -1,4 +1,4 @@
-# FrameHanger
+# Welcome to FrameHanger
 ```
   ______                        _    _
  |  ____|                      | |  | |
@@ -10,7 +10,7 @@
                                                    |___/
 ```
 
-FrameHanger is a tool to extract static and dynamic injected iframes from webpages
+FrameHanger is a tool to extract statically and dynamically injected iframes from webpages
 
 It is able to
 
@@ -51,6 +51,8 @@ The JavaScript code is located at benchmark/dynamic_obfuscation.html.
 
 ```
 python main.py -f benchmark/dynamic_obfuscation.html --dynamic
+#the JS code is highly obfuscated by attackers
+
 python main.py -f benchmark/static_iframe.html --static
 ```
 
@@ -63,7 +65,7 @@ We also provide scripts to enable running the scripts with xvfb on a server with
 
 Please check xvfb-run-safe.sh and run_paralled_linux.sh
 
-## FAQ:
+## FAQ
 
 - Selenium exception: it is due to the chromedriver version. Check this closed issue [ISSUE](https://github.com/ririhedou/FrameHanger/issues/2)
 - Feature extraction: we did not provide the features due to intellectual property restrictions.
