@@ -33,8 +33,6 @@ elif platform == "darwin":
 else:
     raise Exception('Not supported platform')
 
-print ("PATH for the chrome is {}".format(path_to_chrome_driver))
-
 #Candidate UA list: cover IE/Safari/Chrome/FireFox
 
 UA_IE8_Windows7 = "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0)"
@@ -241,8 +239,12 @@ def create_file_to_save_concatenated_html(js, idx, input_path, need_ua):
 
 
 def run_dynamic_analysis(input_file, outDir):
+
     afile = input_file
+
+    print ("PATH for the chrome is {}".format(path_to_chrome_driver))
     print ("we are analyzing {}".format(afile))
+
     start_time = time.time()
 
     (scripts, _) = parse_js_and_save.preprocess_check_for_url(afile)

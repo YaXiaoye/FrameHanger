@@ -14,6 +14,8 @@ several steps
 
 import os
 import argparse
+import detection_dynamic
+import detection_static
 
 
 def extant_file(x):
@@ -28,13 +30,16 @@ def parse_options():
 
     parser = argparse.ArgumentParser(description="iframe Injection detection", prefix_chars='-')
 
-    parser.add_argument('-s', '--static', action='store_true', default=False, help='Static analyser for Tag-based injection')
+    parser.add_argument('-s', '--static', action='store_true', default=False,
+                        help='Static analyser for Tag-based iframe injection')
 
-    parser.add_argument('-d', '--dynamic', action='store_true', default=False,help='Dynamic analyser for JS-based injection')
+    parser.add_argument('-d', '--dynamic', action='store_true', default=False,
+                        help='Dynamic analyser for JS-based iframe injection')
 
-    parser.add_argument('-o', '--outputdir', type=str, default='./', help='Analyze the HTML File')
+    parser.add_argument('-o', '--outputdir', type=str, default='./',
+                        help='Output directory, default is the current directory')
 
-    parser.add_argument('-f', '--html-file', type=extant_file, required=True, help='Analyze the HTML File')
+    parser.add_argument('-f', '--htmlfile', type=extant_file, required=True, help='the HTML File needs to be analyzed')
 
     args = parser.parse_args()
 
@@ -43,4 +48,15 @@ def parse_options():
 
 if __name__ == "__main__":
 
-    pass
+    args = parse_options()
+
+    input_file = args.htmlfile
+
+    if args.dynamic:
+        pass
+    elif args.static:
+        pass
+    else:
+        pass
+
+

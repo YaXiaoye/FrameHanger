@@ -70,7 +70,7 @@ def static_iframe_info(html_file):
     background_analysis(soup)
 
     for idx, ifr in enumerate(iframes):
-        print ("=========================== {}-th IFrame ============================".format(idx))
+        print ("\n=========================== {}-th IFrame ============================".format(idx))
         try:
             iframe = iframes[idx]
             line_number_parser.print_each_iframe(idx)
@@ -79,7 +79,7 @@ def static_iframe_info(html_file):
                 src= iframe.get('src').encode('ascii', 'ignore').decode('ascii')
                 source_lexical_information(src)
         except:
-            print ("Exception for {}-th Iframe".format(idx))
+            print ("Exception for {}-th Iframe analysis".format(idx))
     return
 
 

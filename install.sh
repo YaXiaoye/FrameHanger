@@ -6,6 +6,10 @@ pip --version
 
 echo "Install dependences"
 
+echo "Install beautifulSoup"
+
+sudo pip install beautifulsoup4==4.6.0
+
 echo "Install slimit for AST"
 
 sudo pip install slimit==0.8.1
