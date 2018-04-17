@@ -28,19 +28,40 @@ bash install.sh
 
 ## How to use
 ```
+python main.py -h                                                                                                                                                                                       ketian@ketian
+usage: main.py [-h] [-s] [-d] [-o OUTPUTDIR] -f HTMLFILE
+
+Iframe injection detection
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -s, --static          Static analyser for Tag-based iframe injection
+  -d, --dynamic         Dynamic analyser for JS-based iframe injection
+  -o OUTPUTDIR, --outputdir OUTPUTDIR
+                        Output directory, default is the current directory
+  -f HTMLFILE, --htmlfile HTMLFILE
+                        the HTML File needs to be analyzed
 
 ```
 
+## Demo
 
-## A Demo
-
-The demo shows that FrameHange could extract injected iframes from obfuscated JavaScript code.
+The demo shows that FrameHange could extract injected iframes from HTML webapges and obfuscated JavaScript code.
 The JavaScript code is located at benchmark/dynamic_obfuscation.html.
 
-python dynamic_detection.py benchmark/dynamic_obfuscation.html .
-
+```
+python main.py -f benchmark/dynamic_obfuscation.html --dynamic
+python main.py -f benchmark/static_iframe.html --static
+```
 
 ![](https://github.com/ririhedou/FrameHanger/blob/master/benchmark/demo.gif)
+
+
+## Extra
+
+We also provide xvfb script to enable run the scripts on a server and multiple processes version.
+
+Please check run_paralled_linux.sh
 
 ## Disclaim
 

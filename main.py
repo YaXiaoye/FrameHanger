@@ -28,7 +28,7 @@ def extant_file(x):
 
 def parse_options():
 
-    parser = argparse.ArgumentParser(description="iframe Injection detection", prefix_chars='-')
+    parser = argparse.ArgumentParser(description="iframe injection detection", prefix_chars='-')
 
     parser.add_argument('-s', '--static', action='store_true', default=False,
                         help='Static analyser for Tag-based iframe injection')
@@ -59,4 +59,4 @@ if __name__ == "__main__":
     else:
         pass
 
-    
+
