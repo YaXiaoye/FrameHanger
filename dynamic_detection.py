@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # this is python 2.7
 
-__author__ = "ketian"
+__author__ = "ririhedou"
 __time__ = "fall2017"
 
 """
@@ -20,16 +20,16 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.action_chains import ActionChains
 
 
-from analysis_engine import parse_js_and_save
-from analysis_engine import post_log_analysis
+from dynamic_analysis_engine import parse_js_and_save
+from dynamic_analysis_engine import post_log_analysis
 
 
 from sys import platform
 
 if platform == "linux" or platform == "linux2":
-    path_to_chrome_driver = os.getcwd() + "/analysis_engine/dependence/linux/chromedriver"
+    path_to_chrome_driver = os.getcwd() + "/dynamic_analysis_engine/dependence/linux/chromedriver"
 elif platform == "darwin":
-    path_to_chrome_driver = os.getcwd() + "/analysis_engine/dependence/chromedriver"
+    path_to_chrome_driver = os.getcwd() + "/dynamic_analysis_engine/dependence/chromedriver"
 else:
     raise Exception('Not supported platform')
 
@@ -133,7 +133,7 @@ class ChromeConsoleLogging(object):
 def append_iframe_detection_js_to_html(ahtml):
 
     # the path in inject JS code for mutation observing
-    path = "./analysis_engine/iframe_detection_code.js"
+    path = "./dynamic_analysis_engine/iframe_detection_code.js"
 
     with open(path, 'r') as myfile:
         data = myfile.read()
@@ -228,8 +228,8 @@ def create_file_to_save_concatenated_html(js, idx, input_path, need_ua):
         cur_out = "/tmp/"+input_path.split("/")[-1] + '_' +'needua' + '_' + str(idx) + '.html'
     else:
         cur_out = "/tmp/"+input_path.split("/")[-1] + '_' + 'Noneedua' + '_' + str(idx) + '.html'
-    print ("create file at %s" %cur_out)
 
+    print ("create file at %s" %cur_out)
     try:
         os.remove(cur_out)
     except OSError:
@@ -237,54 +237,41 @@ def create_file_to_save_concatenated_html(js, idx, input_path, need_ua):
 
     parse_js_and_save.concatenate_js_to_a_basic_html(js, saved_name=cur_out)
     append_iframe_detection_js_to_html(cur_out)
-
     return
 
 
-def run_whole_process(input_file, outDir):
-
+def run_dynamic_analysis(input_file, outDir):
     afile = input_file
-
     print ("we are analyzing {}".format(afile))
-
     start_time = time.time()
 
     (scripts, _) = parse_js_and_save.preprocess_check_for_url(afile)
-
     if scripts is None:
         sys.exit()
-
     c = 0
     for js in scripts:
         print ("++++run "+str(c)+"-th JS ++++++")
-
         ua_need, analysis_need = parse_js_and_save.ast_check_for_obfuscation_profiling(js)
-
         if not analysis_need:
             pass
-
         elif ua_need:
             srcs = run_selelction_based_emulator(js, input_file, need_ua=True)
-
             if srcs is not None:
-
                 create_file_to_store_src(outDir, afile.replace("/","_"), c, "\n".join(list(srcs)))
-
-
         else:
+
             #do not have to specify different UAs, direct run with one UA
             #create_file_to_save_concatenated_html(js, c, input_file, need_ua=False)
             srcs = run_selelction_based_emulator(js, input_file, need_ua=False)
             if srcs:
                 create_file_to_store_src(outDir,afile.replace("/","_"),c,"\n".join(list(srcs)))
-
         c += 1
     end_time = time.time()
     print("time for", input_file, len(scripts), "tags", end_time-start_time)
     return
 
+
 if __name__ == "__main__":
-    #print sys.argv
     try:
         input_file_abs_path = sys.argv[1]
     except:
@@ -293,13 +280,12 @@ if __name__ == "__main__":
     if not os.path.isfile(input_file_abs_path):
         print ("Not a file! safely exit")
         sys.exit()
-
     try:
         outDir = sys.argv[2]
     except:
         outDir = "/tmp/"
 
-    run_whole_process(input_file_abs_path, outDir)
+    run_dynamic_analysis(input_file_abs_path, outDir)
 
 """
 ./run_fast_linux.sh /mnt/sdb1/domcrawl/iframe_vs_from_zhou/martin/embedScript/12f08b0210e2bc74dcf03ed19aa1490b3d5c2279ae738752ffbbb61fc6d109f1 /tmp/

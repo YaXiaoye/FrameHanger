@@ -66,7 +66,7 @@ def ast_check_for_obfuscation_profiling(js):
 def concatenate_js_to_a_basic_html(js, saved_name="/tmp/temp.html"):
 
     basic_html = "basic.html"
-    _basic_html = os.getcwd() + '/analysis_engine/' + basic_html
+    _basic_html = os.getcwd() + '/dynamic_analysis_engine/' + basic_html
 
     with open(_basic_html, 'r') as myfile:
         data = myfile.read()
