@@ -28,7 +28,7 @@ bash install.sh
 
 ## How to use
 ```
-python main.py -h                                                                                                                                                                                       ketian@ketian
+python main.py -h
 usage: main.py [-h] [-s] [-d] [-o OUTPUTDIR] -f HTMLFILE
 
 Iframe injection detection
