@@ -87,3 +87,5 @@ If you feel this tool is helpful, citing the paper is highly encouraged.
 ## Acknowledgement
 
 Thanks @Tigerly and @xiaodong-yu for reproduction testing.
+
+Current version is 0.0.1
