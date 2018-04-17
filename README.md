@@ -39,7 +39,6 @@ If you feel this tool is helpful, citing the paper is highly encouraged.
 ```
 @inproceedings{framehanger,
   title={FrameHanger: Evaluating and Classifying Iframe Injection at Large Scale},
-  author={Ke Tian, Zhou Li, Kevin Bowers and Danfeng Yao},
   booktitle={Proc. of 14th EAI International Conference on Security and Privacy in Communication Networks (SecureComm)},
   year={2018}
 }
