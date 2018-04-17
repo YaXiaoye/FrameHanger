@@ -59,9 +59,9 @@ python main.py -f benchmark/static_iframe.html --static
 
 ## Extra
 
-We also provide xvfb script to enable run the scripts on a server and multiple processes version.
+We also provide scripts to enable running the scripts with xvfb on a server with multiple processes.
 
-Please check run_paralled_linux.sh
+Please check xvfb-run-safe.sh and run_paralled_linux.sh
 
 ## Disclaim
 
