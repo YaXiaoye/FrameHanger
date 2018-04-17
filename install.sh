@@ -14,3 +14,4 @@ echo "Install selenium for browser simulation"
 
 sudo pip install selenium==3.6.0
 
+sudo pip install tldextract

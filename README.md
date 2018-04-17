@@ -2,6 +2,14 @@
 
 A tool to extract static and dynamic injected iframes
 
+It is able to
+
+- [x] Extract statically injected Iframe
+- [x] Gather information on the Iframe and its host HTML content
+- [x] Selectively and Dynamically executing JavasScript to detect Iframe injection
+- [x] Detect iframe destinations within JavaScript
+
+
 # Install dependencies
 
 ```
