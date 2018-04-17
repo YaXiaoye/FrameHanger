@@ -72,7 +72,7 @@ Please check xvfb-run-safe.sh and run_paralled_linux.sh
 
 ## Disclaimer
 
-A research prototype, use at your own risk under the License.
+A research prototype, use at your own risk under the License. Thanks
 
 If you feel this tool is helpful, citing the paper is highly encouraged.
 
@@ -83,3 +83,7 @@ If you feel this tool is helpful, citing the paper is highly encouraged.
   year={2018}
 }
 ```
+
+## Acknowledgement
+
+Thanks @Tigerly and @xiaodong-yu for reproduction testing.
