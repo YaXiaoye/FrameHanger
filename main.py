@@ -50,13 +50,13 @@ if __name__ == "__main__":
 
     args = parse_options()
 
-    input_file = args.htmlfile
+    input_file_abs_path = args.htmlfile
 
     if args.dynamic:
-        pass
+        detection_dynamic.run_dynamic_analysis(input_file_abs_path, args.outputdir)
     elif args.static:
-        pass
+        detection_static.static_iframe_info(input_file_abs_path)
     else:
         pass
 
-
+    

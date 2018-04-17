@@ -9,14 +9,14 @@
                                                     __/ |
                                                    |___/
 ```
-=========
-A tool to extract static and dynamic injected iframes
+
+FrameHanger is a tool to extract static and dynamic injected iframes from webpages
 
 It is able to
 
 - [x] Extract statically injected Iframe
 - [x] Gather information on the Iframe and its host HTML content
-- [x] Selectively and Dynamically executing JavasScript to detect Iframe injection
+- [x] Selectively and Dynamically executing JavasScript to detect dynamic Iframe injection
 - [x] Detect iframe destinations within JavaScript
 
 
@@ -27,7 +27,9 @@ bash install.sh
 ```
 
 ## How to use
+```
 
+```
 
 
 ## A Demo
