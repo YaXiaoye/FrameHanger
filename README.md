@@ -70,9 +70,9 @@ Please check xvfb-run-safe.sh and run_paralled_linux.sh
 - Selenium exception: it is due to the chromedriver version. Check this closed issue [ISSUE](https://github.com/ririhedou/FrameHanger/issues/2)
 - Feature extraction: we did not provide the features due to intellectual property restrictions.
 
-## Disclaim
+## Disclaimer
 
-A research prototype, use at your own risk
+A research prototype, use at your own risk under the License.
 
 If you feel this tool is helpful, citing the paper is highly encouraged.
 
