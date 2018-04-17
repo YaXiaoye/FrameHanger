@@ -20,7 +20,7 @@ It is able to
 - [x] Detect iframe destinations within JavaScript
 
 
-# Install dependencies
+## Install dependencies
 
 ```
 bash install.sh
