@@ -63,7 +63,7 @@ We also provide scripts to enable running the scripts with xvfb on a server with
 
 Please check xvfb-run-safe.sh and run_paralled_linux.sh
 
-##FAQ:
+## FAQ:
 
 - Selenium exception: it is due to the chromedriver version. Check this closed issue [ISSUE](https://github.com/ririhedou/FrameHanger/issues/2)
 - Feature extraction: we did not provide the features due to intellectual property restrictions.
